@@ -1,38 +1,46 @@
-.App {
-  text-align: center;
+html {
+    /* background: linear-gradient(to right, #D1D5DB, #1F2937); */
+} 
+.gradient {
+        background: linear-gradient(286deg, rgba(198,255,213,1) 0%, rgba(61,232,113,1) 44%, rgba(153,222,59,1) 100%);
+      }
+
+
+      
+
+      .image::before {
+  background-image:  url('https://dk22sb66g7qaa.cloudfront.net/aesir-dam-viewports/Freilassing-active-1366.jpg?rel=2020-02-10+19%3A18%3A10');
+   background-repeat: no-repeat, repeat;
+   background-position: center;
+   background-size: cover;
+      height: auto;
+      content: "";
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: .2;
+      z-index: 0;
+
+   
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header{
+  opacity: 1;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.font-dropdown .p-dropdown-label  {
+  
+ font-size: 1.1rem !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[type=number] {
+  -moz-appearance: textfield;
 }

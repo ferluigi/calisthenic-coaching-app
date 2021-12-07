@@ -1,24 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 
-function App() {
+//GRADIANT COLOR AND EFFECT Change the colour  to match the previous section colour
+import {
+  GradientDecorationBottom,
+  GradientDecorationTop,
+} from "./Decoration/GradientDecoration";
+
+//////
+import SubscribeModalButton from "./Decoration/Modal";
+
+////PRIME REACT
+import "primereact/resources/themes/saga-green/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
+
+//COMPONENTS
+import Navbar from './Components/Navbar';
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+import Pricing from "./Components/Pricing";
+import About from "./Components/About";
+import Skills from "./Components/Skills";
+import Contact from "./Components/Contact";
+
+
+const App: React.FC = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="leading-normal tracking-normal text-white gradient">
+   
+      <Navbar />
+      <SubscribeModalButton  />
+      <Header  />
+      <GradientDecorationBottom />
+      <About />
+      <Skills />
+      <Pricing />
+      <GradientDecorationTop />
+      <Contact />
+      <Footer />
     </div>
   );
 }
