@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  client:
+    container_name: workout_app_frontend
+    image: workout_app_frontend:1.0
+    build:
+      context: client
+      target: production
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3000
+    networks:
+      - shared-networks
+    restart: unless-stopped
+
+  server:
+    container_name: workout_app_backend
+    image: workout_app_backend:1.0
+    build:
+      context: server
+      target: base
+      dockerfile: Dockerfile
+    expose:
+      - '4000'
+    ports:
+      - '4000:4000'
+    environment:
+      - HOST=0.0.0.0
+      - PORT=4000
+    command: npm run dev
+    networks:
+      - shared-networks
+    restart: unless-stopped
+    
+
+networks:
+  shared-networks:
+
+  
